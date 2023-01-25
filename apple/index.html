@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontawesom ------------------------------------------------------------------------------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    
+    <!-- bootstrap css ---------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- slick ----------------------------------------------------------------------------------------->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick.min.js"></script>
+
+    <style>
+        #gnb,#gnb2{
+            width: 100%;
+            height: 50px;   
+            background-color: black;          
+        }
+        #gnb ul{
+            background-color: black !important;
+            height: 50px;           
+            margin:auto;
+        }
+        #gnb ul{
+            width: 70% !important;  
+            margin: auto;
+        }       
+        #gnb ul li{
+            list-style-type: none;
+            float: left;
+        }
+        #gnb{
+            display: block;
+        }
+        #gnb2{
+            display: none;           
+        }
+        #gnb ul li a{
+            display: block;
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+        }        
+        #gnb2-list{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 10;   
+            display: none;         
+        }
+
+        #content1, #content2, #content3, #content4 .container, #content5 .container{
+            height:730px;                    
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            text-align: center;
+            position: relative;
+        }
+        #content1{            
+            background-color: black;
+            background-image: url("img/pic01.png");
+        }
+        .caption{
+            position: absolute;
+            top: 50px;
+            left: 25%;
+            width: 50%;
+
+        }
+        #content1 h2, #content1 h3, #content4 h2, #content4 h3{
+            color:white;
+        }
+        .caption h2{
+            font-size: 55px;
+        }
+        #content2{
+            background-color:#FBFBFD;
+            background-image: url("img/pic03.png"); 
+        }
+        #content2 .caption h2, #content2 .caption h3, #content5 .caption h2, #content5 .caption h3{
+            color: black;
+        }
+        
+        .box-height{
+            height: 580px !important;
+        }
+        #content3{
+            background-color:#FBFBFD;
+            background-image: url("img/pic09.png"); 
+        }        
+        #content4 .col-md-6:nth-child(1) .container{
+            background-color: black;
+            background-image: url("img/pic05.png");
+        }
+        
+        #content4 .col-md-6:nth-child(2) .container{
+            background-color: black;
+            background-image: url("img/pic07.png");
+        }
+        #content5 .col-md-6:nth-child(1) .container{
+            background-color: #FBFBFD;
+            background-image: url("img/pic10.png");
+        }
+        
+        #content5 .col-md-6:nth-child(2) .container{
+            background-color: #F5F5F7;
+            background-image: url("img/pic11.png");
+        }
+        .footer-column{
+            width:20%;
+            float: left; 
+        }
+        .footer-column li{
+            list-style-type:none;
+        }
+        #footer1{
+            display: block;
+        }
+        #footer2{
+            display: none;
+        }
+        #footer2 li{
+            list-style-type: none;
+        }
+        .slick-slide {
+            height: 700px !important;
+        }
+        .slick-slide img{
+            width: 100%;
+            height: 700px !important;
+        }
+        .slick-prev {
+            width:300px;
+            height: 100%;
+            left: 0px;
+            z-index: 10;
+        }
+   
+        .slick-next{
+            width:300px;
+            height: 100%;
+            right:0px;
+        }
+        #footer2 button{
+            display: block;
+            background-color: white;
+            border: none;
+        }
+        .slider-padding{
+            padding: 10px; 
+            padding-right:0
+        }
+
+        @media screen and (max-width:576px) {
+            #gnb{
+                display: none;
+            }
+            #gnb2{
+                display: block;
+                width:  100%;
+                height: 50px;
+            }
+            #gnb2 ul{
+                width: 100% !important;
+                height: 50px;
+                box-sizing: border-box !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            #gnb2 ul li{    
+                text-align: center !important;
+                list-style-type: none;
+                float: left;
+            }
+            #gnb2 ul li a{
+                margin-top: 10px;
+                height: 100%;
+                display: inline-block !important;   
+                color: white;            
+            }
+            #gnb2 ul li:nth-child(1){
+                /* background-color:blue; */
+                width:15%;
+                text-align: center !important;
+                box-sizing: border-box !important;
+            }
+            #gnb2 ul li:nth-child(2){
+                width: 70%;
+                text-align: center;
+                /* background-color: red;    */
+                box-sizing: border-box !important;     
+            }
+            #gnb2 ul li:nth-child(3){
+                width:15%;
+                /* background-color: green; */
+                box-sizing: border-box !important;
+            }
+            #content1{
+                height: 540px;
+                background-image: url("img/pic02.png");
+            }
+            .caption h2{
+                font-size: 35px;
+            }
+            #content2{
+                height: 540px;
+                background-image: url("img/pic04.png");
+            }
+            #content3{
+                background-image: url("img/pic14.png");
+            }
+            #content4 .col-6{
+                width:100% !important;  
+                padding: 0;         
+                padding-top: 10px; 
+            }
+            #content4 .col-md-6:nth-child(1) .container{                          
+                background-image: url("img/pic06.png");
+            }
+            #content4 .col-md-6:nth-child(2) .container{                      
+                background-image: url("img/pic08.png");
+            }
+            #content5 .col-6{
+                width:100% !important;  
+                padding: 0;         
+                padding-top: 10px;                              
+            }
+            #content5 .col-md-6:nth-child(1) .container{                          
+                background-image: url("img/pic13.png");
+            }
+            #content5 .col-md-6:nth-child(2) .container{                      
+                background-image: url("img/pic12.png");
+            }
+            #content6{
+                padding-top: 10px;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            #content6 .slder2{
+                background-image: url("img/img06.jpg");
+                background-image: url("img/img07.jpg");
+                background-image: url("img/img08.jpg");
+                background-image: url("img/img09.jpg");
+                background-image: url("img/img10.jpg");
+            }
+    
+        
+            #footer1{
+                display: none;
+            }
+            #footer2{
+                display: block;
+            }
+            
+            
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            /* gnb mobile menu *****************************************************/
+            // $("#gnb2 .fa-bars").click(function(){    
+            //     $("#gnb2-list").slideToggle();                         
+            // });  
+            $("#gnb2").delegate(".fa-bars","click",function(){   
+                console.log($(this)); 
+                $("#gnb2-list").slideToggle(); 
+                $(this).removeClass("fa-bars");
+                $(this).addClass("fa-times");                        
+            });            
+            $("#gnb2").delegate(".fa-times","click",function(){   
+                console.log($(this)); 
+                $("#gnb2-list").slideToggle(); 
+                $(this).removeClass("fa-times");
+                $(this).addClass("fa-bars");                        
+            });            
+
+            /* slick slider ********************************************************/
+            var option={                        
+                autoplay: true,
+                autoplaySpeed: 3000,                
+                centerMode: true,
+                centerPadding: '300px',
+                arrows:true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,              
+                pauseOnFocus: false, 
+                pauseOnHover: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1,                  
+                        }
+                    }
+                ]
+            } ;
+            console.log("윈도우width:"+$(window).width());
+            if($(window).width()<576){
+                option.centerPadding=20;
+                option.arrows=false;
+                $(".slider div").removeClass("slider-padding");
+            }
+            $('.slider').slick(option);
+        
+            /* Mobile Footer ***************************************/
+            $("#btn1").on("click",function(){
+                console.log("클릭");
+                $("#btn1+ul").slideToggle();
+            });
+            $("#btn2").on("click",function(){
+                console.log("클릭");
+                $("#btn2+ul").slideToggle();
+            });
+        
+        });
+     </script>
+</head>
+<body>
+    <!-- Global Navigation Bar ----------------------------------------------------------------->
+    <div id="gnb" class="container-fluid">
+        <ul>
+            <li><a href="#"><i class="fa fa-apple"></i></a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Mac</a></li>
+            <li><a href="#">iPad</a></li>
+            <li><a href="#">iPhone</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">AirPods</a></li>
+            <li><a href="#">TV &amp; Home</a></li>
+            <li><a href="#">Only on Apple</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>
+    </div>
+    <!-- Global Navigation Bar -->
+    <!-- GNB Mobile ---------------------------------------------------------------------------->
+    <div id="gnb2" class="container-fluid">
+        <ul>
+            <li><a href="#"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#"><i class="fa fa-apple"></i></a></li>            
+            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+        </ul>        
+    </div>
+    <div id="gnb2-list">
+        <ul>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Mac</a></li>
+            <li><a href="#">iPad</a></li>
+            <li><a href="#">iPhone</a></li>
+        </ul>
+    </div>
+    <!-- GNB Mobile -->
+    <!-- iphone14 pro -------------------------------------------------------------------------->
+    <div id="content1" class="container-fluid">
+        <div class="container">
+            <div class="caption">
+                <h2>iPhone14 Pro</h2>
+                <h3>Pro. Beyond.</h3>
+                <div>
+                    <a href="#">Learn more &gt;</a>
+                    <a href="#">Buy &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- iphone14 pro -->
+    <!-- iphone14 -------------------------------------------------------------------------->
+    <div id="content2" class="container-fluid">
+        <div class="container">
+            <div class="caption">
+                <h2>iPhone14</h2>
+                <h3>Big and bigger.</h3>
+                <p>iPhone 14 Plus available starting 10.7</p>
+                <div>
+                    <a href="#">Learn more &gt;</a>
+                    <a href="#">Buy &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- iphone14 -->
+    <!-- Watch ULTRA --------------------------------------------------------------->
+    <div id="content3" class="container-fluid">
+        <div class="container">
+            <div class="caption">
+                <h2><i class="fa fa-apple"></i>WATCH</h2>
+                <h3 style="color: #FD6A13;font-size:20px;">ULTRA</h3>
+                <p>Adventure awaits.</p>
+                <div>
+                    <a href="#">Learn more &gt;</a>
+                    <a href="#">Buy &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Watch ULTRA-->
+    <!-- double box1 ---------------------------------------------------------------------->
+    <div id="content4" class="container-fluid">
+        <div class="row">
+            <!-- AirPods Pro ------------------------------------------------------------------>
+            <div class="col-md-6" style="padding-right: 0;">
+                <div class="col-md-12"></div>
+                <div class="container box-height">
+                    <div class="caption">
+                        <h2>AirPods Pro</h2>
+                        <h3>Rebuilt from the sound up</h3>                        
+                        <div>
+                            <a href="#">Learn more &gt;</a>
+                            <a href="#">Shop &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AirPods Pro -->
+            <!-- Apple Watch ---------------------------------------------------------->
+            <div class="col-md-6">
+                <div class="container box-height">
+                    <div class="caption">
+                        <h2><i class="fa fa-apple"></i> WATCH</h2>
+                        <h6 style="color: red;font-size:20px;">series8</h6>
+                        <h3>A healthy leap ahead</h3>
+                        <div>
+                            <a href="#">Learn more &gt;</a>
+                            <a href="#">Shop &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Apple Watch-->
+    <!-- double box2 ---------------------------------------------------------------------->
+    <div id="content5" class="container-fluid">
+        <div class="row">        
+             <!-- Watch SE ---------------------------------------------------------->
+             <div class="col-md-6" style="padding-right: 0;">
+                <div class="container box-height">
+                    <div class="caption">
+                        <h2><i class="fa fa-apple"></i> WATCH</h2>
+                        <h6 style="color: red;font-size:20px;">SE</h6>
+                        <h3>A great deal to love.</h3>
+                        <div>
+                            <a href="#">Learn more &gt;</a>
+                            <a href="#">Buy &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Watch SE-->
+             <!-- Fitness+ ---------------------------------------------------------->
+             <div class="col-md-6">
+                <div class="container box-height">
+                    <div class="caption">
+                        <h2><i class="fa fa-apple"></i> Fitness+</h2>
+                        <h3>Fitness for everyone.<br>
+                        Now all you need is iPhone.
+                        </h3>
+                        <div>
+                            <a href="#">Learn more &gt;</a>
+                            <a href="#">Notify me &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fitness+ -->
+        </div>
+    </div>
+    <!-- double box1-->
+    <!-- appleTV carousel ----------------------------------------------------------->
+    <div id="content6" class="container-fluid">
+        <div class="slider">
+            <div style="padding: 10px; padding-right:0"><img src="img/img01.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img02.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img03.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img04.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img05.jpg"></div>
+          </div>
+    </div>
+    <!-- appleTV carousel-->    
+
+     <!--appleTV mobile carousel --------------------------------------------------------->
+    <div id="content7" class="container-fluid">
+        <div class="slider2">
+            <div style="padding: 10px; padding-right:0"><img src="img/img06.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img07.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img08.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img09.jpg"></div>
+            <div style="padding: 10px; padding-right:0"><img src="img/img10.jpg"></div>
+          </div>
+    </div>
+    <!-- appleTV mobile carousel-->
+    
+    <!-- footer --------------------------------------------------------------------------------------->
+    <div id="footer1" class="container-fluid">
+        <div class="container">
+            <hr style="border:1px solid #dddddd;">
+            <div class="footer-column">   
+                <ul>
+                    <li><b>Shop and Learn</b></li>
+                    <li>Store</li>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>Watch</li>
+                    <li>AirPods</li>
+                    <li>TV & Home</li>
+                    <li>AirTag</li>
+                    <li>Accessories</li>
+                    <li>Gift Cards</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>Services</b></li>
+                    <li>Apple Music</li>
+                    <li>Apple TV+</li>
+                    <li>Apple Fitness+</li>
+                    <li>Apple News+</li>
+                    <li>Apple Arcade</li>
+                    <li>iCloud</li>
+                    <li>Apple One</li>
+                    <li>Apple Card</li>
+                    <li>Apple Books</li>
+                    <li>Apple Podcasts</li>
+                    <li>App Store</li>
+                    <br>
+                    <li><b>Account</b></li>
+                    <li>Manage Your Apple ID</li>
+                    <li>Apple Store Account</li>
+                    <li>iCloud.com</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>Apple Store</b></li>
+                    <li>Find aStore</li>
+                    <li>Genius Bar</li>
+                    <li>Today at Apple</li>
+                    <li>Apple Camp</li>
+                    <li>Apple Store App</li>
+                    <li>Refurbished and Clearance</li>
+                    <li>Financing</li>
+                    <li>Apple Trade In</li>
+                    <li>Order Status</li>
+                    <li>Shopping Help</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>For Business</b></li>
+                    <li>Apple and Business</li>
+                    <li>Shop for Business</li>
+                    <br>
+                    <li><b>For Education</b></li>
+                    <li>Apple and Education</li>
+                    <li>Shop for K-12</li>
+                    <li>Shop for College</li>
+                    <br>
+                    <li><b>For Healthcare</b></li>                    
+                    <li>Apple in Healthcare</li>
+                    <li>Health on Apple Watch</li>
+                    <li>Health Records on iPhone</li>
+                    <br>
+                    <li><b>For Government</b></li>
+                    <li>Shop for Government</li>
+                    <li>Shop for Veterans and Military</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>Apple Values</b></li>
+                    <li>Accessibility</li>
+                    <li>Education</li>
+                    <li>Environment</li>
+                    <li>Inclusion and Diversity</li>
+                    <li>Privacy</li>
+                    <li>Racial Equity and Justice</li>
+                    <li>Supplier Responsibility</li>
+                    <br>
+                    <li><b>About Apple</b></li>
+                    <li>Newsroom</li>
+                    <li>Apple Leadership</li>
+                    <li>Career Opportunities</li>
+                    <li>Investors</li>
+                    <li>Ethics & Compliance</li>
+                    <li>Events</li>
+                    <li>Contact Apple</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer-->
+    <!-- footer mobile --------------------------------------------------------------------------->
+    <div id="footer2" class="container">
+        <button type="button" id="btn1">Shop and learn</button>
+        <ul id="ul1" style="display: none;">
+            <li>Store</li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>iPhone</li>
+            <li>Watch</li>
+            <li>AirPods</li>
+            <li>TV &amp; Home</li>
+            <li>Air Tag</li>
+            <li>Accessories</li>
+            <li>Gift Cards</li>
+        </ul>
+        <hr>
+        <button type="button" id="btn2">Services</button>
+        <ul id="ul2" style="display: none;">
+            <li>Apple Music</li>
+            <li>Apple TV+</li>
+            <li>Apple Fitness+</li>
+            <li>Apple News+</li>
+            <li>Apple Arcade</li>
+            <li>iCloud</li>
+            <li>Apple One</li>
+            <li>Apple Card</li>
+            <li>Apple Books</li>
+            <li>Apple Podcasts</li>
+            <li>Apple Store</li>
+        </ul>
+        <hr>
+    </div>
+    <!-- footer mobile -->
+
+</body>
+</html>
